@@ -4,86 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Nombre - Tu Perfil Laboral</title>
-    <link rel="stylesheet" href="estilos.css"> <!-- Si deseas agregar estilos personalizados -->
-    <style>
-        /* Estilos CSS para los desplegables */
-        .collapsible {
-            background-color: #f1f1f1;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-        }
-
-        .active, .collapsible:hover {
-            background-color: #ddd;
-        }
-
-        .content {
-            display: none;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Vinculación al archivo CSS externo -->
 </head>
 <body>
-    <header>
-        <h1>Tu Nombre</h1>
-        <p>Tu Eslogan Personal</p>
-    </header>
+    <div class="container">
+        <!-- Panel lateral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#acerca">Acerca de Mí</a></li>
+                <li><a href="#experiencia">Experiencia Laboral</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     
-    <nav>
-        <!-- Menú de navegación (opcional) -->
-        <ul>
-            <li><a href="#acerca">Acerca de Mí</a></li>
-            <li><a href="#experiencia">Experiencia Laboral</a></li>
-            <li><a href="#educacion">Educación</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#portafolio">Portafolio</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    
-    <section id="acerca">
-        <!-- Sección Acerca de Mí -->
-        <button class="collapsible">Acerca de Mí</button>
-        <div class="content">
-            <p>Tu introducción personal...</p>
-        </div>
-    </section>
-    
-    <section id="experiencia">
-        <!-- Sección Experiencia Laboral -->
-        <button class="collapsible">Experiencia Laboral</button>
-        <div class="content">
-            <!-- Aquí puedes enumerar tus trabajos anteriores -->
-        </div>
-    </section>
-    
-    <!-- Repite el patrón para las demás secciones -->
-    
-    <footer>
-        <!-- Pie de página (opcional) -->
-        <p>Derechos de autor © 2023 Tu Nombre</p>
-    </footer>
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <section id="acerca" class="section">
+                <!-- Sección Acerca de Mí -->
+                <h2>Acerca de Mí</h2>
+                <p>Tu introducción personal...</p>
+            </section>
+            
+            <section id="experiencia" class="section">
+                <!-- Sección Experiencia Laboral -->
+                <h2>Experiencia Laboral</h2>
+                <!-- Aquí puedes enumerar tus trabajos anteriores -->
+            </section>
+            
+            <!-- Repite el patrón para las demás secciones -->
+        </main>
+    </div>
 
     <script>
-        // JavaScript para hacer que las secciones sean colapsables
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
+        // JavaScript para mostrar/ocultar las secciones con transición suave
+        const links = document.querySelectorAll('nav.sidebar a');
+        const sections = document.querySelectorAll('main.main-content .section');
 
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                targetSection.style.display = 'block';
             });
-        }
+        });
     </script>
 </body>
 </html>
+
