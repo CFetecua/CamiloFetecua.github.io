@@ -3,20 +3,28 @@
 body {
 	background-color: #949292;
 	margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; 
+    padding: 20;
+    font-family: Arial, sans-serif;
 	/* Cambia la fuente según tu elección */
+	border-radius: 20px; 
+	/* Aplica bordes curvos al body */
+	
     
 }
 
 .container {
+
     display: flex;
-	max-width: 1200px; /* Ancho máximo del contenido */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    padding: 20px; /* Espaciado interior opcional */
+	max-width: 1200px; 
+	/* Ancho máximo del contenido */
+	margin: 0 auto; 
+	/* Centra el contenedor horizontalmente */
+    padding: 20px; 
+	/* Espaciado interior opcional */
     background-color: #696969; 
 	/* Fondo del contenedor */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra alrededor del contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+	/* Sombra alrededor del contenedor */
 
 }
 
@@ -56,6 +64,25 @@ body {
 	cubra todo el área del elemento <li> */
     padding: 10px; 
 	/* Añade un relleno para espaciado */
+	transition: background-color 0.3s, color 0.3s; 
+	/* Agrega transiciones suaves */
+
+}
+
+/* Efecto al pasar el mouse sobre el enlace */
+.sidebar a:hover {
+    background-color: #555; 
+	/* Cambia el color de fondo al pasar el mouse */
+    color: #fff; 
+	/* Cambia el color del texto al pasar el mouse */
+}
+
+/* Efecto al hacer clic en el enlace */
+.sidebar a:active {
+    background-color: #fff; 
+	/* Cambia el color de fondo al hacer clic */
+    color: #fff; 
+	/* Cambia el color del texto al hacer clic */
 }
 
 /* Estilos CSS para las secciones */
